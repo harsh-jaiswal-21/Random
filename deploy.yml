@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Tomcaty
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: fe
+  template:
+    metadata:
+      labels:
+        app: fe
+    spec:
+      containers:
+      - name: tomcat
+        image: nginx
+        ports:
+        - containerPort: 8080 
